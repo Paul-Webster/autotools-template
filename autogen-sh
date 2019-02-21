@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ################################################################################
-# complete rebuild of the make enviroment
+# Complete rebuild of the make enviroment.
 ################################################################################
 
 rm -rf autom4te.cache
@@ -10,8 +10,9 @@ aclocal --force -I m4
 autoheader --force
 autoconf --force
 automake --force --add-missing
-./configure
+rm -f config.h.in~  
 
+# ./configure [optional args]
 # make clean
 # make
 # make install

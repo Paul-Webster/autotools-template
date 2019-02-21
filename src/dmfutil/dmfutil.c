@@ -11,8 +11,8 @@
 int main() {
 	int status, result, v1 = 2, v2 = 3;
 	puts("Welcome to DMF");
-
 	status = dmf_initialize();
+
 	result = dmf_add(v1, v2);
 	printf("dmf_add(%d, %d) [%d]\n", v1, v2, result);
 

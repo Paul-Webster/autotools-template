@@ -5,9 +5,9 @@
 SUFFIXES = .c .cpp .s .o .h .asm
 
 if DEBUG
-  AM_CFLAGS =-I$(top_srcdir)/src/libdmf -I$(top_srcdir)/src/dmfutil -ansi -pedantic -Wall -g -O3
+  AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall -g -O3
 else
-  AM_CFLAGS =-I$(top_srcdir)/src/libdmf -I$(top_srcdir)/src/dmfutil -ansi -pedantic -Wall -O3
+  AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall
 endif
 
 # AM_CFLAGS += $(GLIB_CFLAGS)
