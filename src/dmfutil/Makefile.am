@@ -1,7 +1,5 @@
 ################################################################################
 # Makefile.am generated for use with automake 1.16.1.
-#
-# Copyright (C) 2018-2019, Webster Technology Consulting.
 ################################################################################
 
 SUFFIXES = .c .cpp .s .o .h .asm

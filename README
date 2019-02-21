@@ -1,15 +1,2 @@
-#!/bin/sh
-# complete rebuild of the automake enviroment
-
-mkdir -p bin src doc examples lib share scripts
-autoscan
-autoconf -v -f
-automake -a -f
-./configure
-
-# make clean
-# make
-# make install
-# run program ...
-# make uninstall
+# -*- README -*-
 

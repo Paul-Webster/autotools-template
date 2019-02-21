@@ -1,17 +1,16 @@
 #!/bin/sh
-# complete rebuild of the automake enviroment
 
-#!/bin/sh
+################################################################################
+# complete rebuild of the make enviroment
+################################################################################
 
 rm -rf autom4te.cache
-
 autoscan --force
 aclocal --force -I m4
 autoheader --force
 autoconf --force
 automake --force --add-missing
 ./configure
-find . -name "*~" -print -exec rm {} \;
 
 # make clean
 # make
