@@ -10,5 +10,6 @@
 *.tar*
 *.zip
 *.lo
+*.Po
 *.gcno
 *.gcda

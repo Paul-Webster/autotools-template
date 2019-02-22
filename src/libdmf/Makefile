@@ -269,16 +269,14 @@ top_build_prefix = ../../
 top_builddir = ../..
 top_srcdir = ../..
 SUFFIXES = .c .cpp .s .o .h .asm
-AM_CFLAGS = -I$(top_srcdir)/src/libdmf -Wall
-#AM_CFLAGS = -I$(top_srcdir)/src/libdmf -Wall -g -O3
 
 ################################################################################
-# The libraries to build
+# The libraries to build.
 ################################################################################
 noinst_LIBRARIES = libdmf.a
 
 ################################################################################
-# The files to add to the library and to the source distribution
+# The files to add to the library and to the source distribution.
 ################################################################################
 libdmf_a_SOURCES = \
 	$(libdmf_a_HEADERS) \
@@ -570,6 +568,9 @@ uninstall-am:
 
 .PRECIOUS: Makefile
 
+
+#	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall -g -O3
+	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

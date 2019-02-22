@@ -21,8 +21,8 @@ AM_PROG_AS
 AC_PROG_CC_C99
 AC_PROG_CPP
 AC_PROG_RANLIB
-# AC_CHECK_TOOLS(WINDRES, [windres], :)
 AC_PROG_INSTALL
+# AC_CHECK_TOOLS(WINDRES, [windres], :)
 
 ################################################################################
 # Reset the externally set CFLAGS after calling AC_PROG*
@@ -44,18 +44,10 @@ AC_LANG([C])
 # AM_CONDITIONAL([LIB_SQLITE3],  [test "$have_libsqlite3" = "yes"])
 
 ################################################################################
-# Checks for header files.
-################################################################################
-AC_HEADER_STDC
-AC_CHECK_HEADERS([stdio.h])
-AC_HEADER_TIME
-AC_TYPE_UINTPTR_T
-AC_CHECK_HEADERS([direct.h errno.h file.h signal.h sys/time.h time.h unistd.h unixio.h])
-
-################################################################################
 # Checks for typedefs, structures, and compiler characteristics.
 ################################################################################
 AC_TYPE_SIZE_T
+AC_TYPE_INT64_T
 AC_C_BIGENDIAN
 AC_C_CONST
 AC_C_INLINE
@@ -63,6 +55,15 @@ AC_C_VOLATILE
 AC_PROG_GCC_TRADITIONAL
 AC_STRUCT_TM
 AC_TYPE_SIGNAL
+
+################################################################################
+# Checks for header files.
+################################################################################
+AC_HEADER_STDC
+AC_CHECK_HEADERS([stdio.h])
+AC_HEADER_TIME
+AC_TYPE_UINTPTR_T
+AC_CHECK_HEADERS([direct.h errno.h file.h signal.h sys/time.h time.h unistd.h unixio.h])
 
 ################################################################################
 # Add debug support

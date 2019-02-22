@@ -258,11 +258,8 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUFFIXES = .c .cpp .s .o .h .asm
-@DEBUG_FALSE@AM_CFLAGS = -I$(top_srcdir)/src/libdmf -Wall
-@DEBUG_TRUE@AM_CFLAGS = -I$(top_srcdir)/src/libdmf -Wall -g -O3
 dmfutil_SOURCES = dmfutil.c
-dmfutil_LDADD = $(top_builddir)/src/libdmf/libdmf.a $(AM_LDFLAGS) \
-	$(GLIB_LIBS) $(SQLITE3_LIBS)
+dmfutil_LDADD = $(top_builddir)/src/libdmf/libdmf.a $(AM_LDFLAGS)
 all: all-am
 
 .SUFFIXES:
@@ -580,6 +577,11 @@ uninstall-am: uninstall-binPROGRAMS
 
 .PRECIOUS: Makefile
 
+
+@DEBUG_TRUE@	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall -g -O3
+@DEBUG_FALSE@	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall
+# dmfutil_LDADD += $(GLIB_LIBS)
+# dmfutil_LDADD += $(SQLITE3_LIBS)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -5,18 +5,18 @@
 SUFFIXES = .c .cpp .s .o .h .asm
 
 if DEBUG
-  AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall -g -O3
+	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall -g -O3
 else
-  AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall
+	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall
 endif
 
 ################################################################################
-# The libraries to build
+# The libraries to build.
 ################################################################################
 noinst_LIBRARIES = libdmf.a
 
 ################################################################################
-# The files to add to the library and to the source distribution
+# The files to add to the library and to the source distribution.
 ################################################################################
 libdmf_a_SOURCES = \
 	$(libdmf_a_HEADERS) \
