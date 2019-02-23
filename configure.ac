@@ -60,9 +60,9 @@ AC_TYPE_SIGNAL
 # Checks for header files.
 ################################################################################
 AC_HEADER_STDC
-AC_CHECK_HEADERS([stdio.h])
 AC_HEADER_TIME
 AC_TYPE_UINTPTR_T
+AC_CHECK_HEADERS([stdio.h])
 AC_CHECK_HEADERS([direct.h errno.h file.h signal.h sys/time.h time.h unistd.h unixio.h])
 
 ################################################################################
@@ -86,7 +86,8 @@ AM_COND_IF(DEBUG,
 ################################################################################
 # Checks for library functions.
 ################################################################################
-AC_CONFIG_FILES([Makefile
-                 src/libdmf/Makefile
-                 src/dmfutil/Makefile])
+AC_CONFIG_FILES([
+	Makefile
+	src/libdmf/Makefile
+	src/dmfutil/Makefile])
 AC_OUTPUT

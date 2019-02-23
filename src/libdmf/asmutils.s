@@ -1,6 +1,6 @@
-/##############################################################################
-// asmmath.s - GNU/GAS 64 bit assembly code
-//##############################################################################
+//==============================================================================
+// asmutils.s - asmmath.s - GNU/GAS 64 bit assembly code.
+//==============================================================================
 
 // function prologue
 .macro function name
@@ -16,7 +16,7 @@
 .section .data /* static data - constants */
 
 	module_str:
-		.ascii "extmath.s "
+		.ascii "asmutils.s "
 
 	module_str_end:
 		.set GSTR_SIZE, module_str_end - module_str

@@ -5421,18 +5421,6 @@ $as_echo "#define STDC_HEADERS 1" >>confdefs.h
 
 fi
 
-for ac_header in stdio.h
-do :
-  ac_fn_c_check_header_mongrel "$LINENO" "stdio.h" "ac_cv_header_stdio_h" "$ac_includes_default"
-if test "x$ac_cv_header_stdio_h" = xyes; then :
-  cat >>confdefs.h <<_ACEOF
-#define HAVE_STDIO_H 1
-_ACEOF
-
-fi
-
-done
-
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether time.h and sys/time.h may both be included" >&5
 $as_echo_n "checking whether time.h and sys/time.h may both be included... " >&6; }
 if ${ac_cv_header_time+:} false; then :
@@ -5504,6 +5492,18 @@ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
      done
 fi
 
+
+for ac_header in stdio.h
+do :
+  ac_fn_c_check_header_mongrel "$LINENO" "stdio.h" "ac_cv_header_stdio_h" "$ac_includes_default"
+if test "x$ac_cv_header_stdio_h" = xyes; then :
+  cat >>confdefs.h <<_ACEOF
+#define HAVE_STDIO_H 1
+_ACEOF
+
+fi
+
+done
 
 for ac_header in direct.h errno.h file.h signal.h sys/time.h time.h unistd.h unixio.h
 do :

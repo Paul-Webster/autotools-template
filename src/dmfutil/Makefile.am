@@ -2,12 +2,11 @@
 # Makefile.am generated for use with automake 1.16.1.
 ################################################################################
 
-SUFFIXES = .c .cpp .s .o .h .asm
+SUFFIXES = .s .asm .inc .c .cpp .h .o
 
+AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall -O3
 if DEBUG
-	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall -g -O3
-else
-	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall
+	AM_CFLAGS += -g
 endif
 
 # AM_CFLAGS += $(GLIB_CFLAGS)
@@ -16,6 +15,9 @@ endif
 bin_PROGRAMS = dmfutil
 dmfutil_SOURCES = dmfutil.c
 
-dmfutil_LDADD = $(top_builddir)/src/libdmf/libdmf.a $(AM_LDFLAGS)
+dmfutil_LDADD = \
+	$(top_builddir)/src/libdmf/libdmf.a \
+	$(AM_LDFLAGS)
+
 # dmfutil_LDADD += $(GLIB_LIBS)
 # dmfutil_LDADD += $(SQLITE3_LIBS)

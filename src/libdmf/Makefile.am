@@ -2,13 +2,18 @@
 # Makefile.am generated for use with automake 1.16.1.
 ################################################################################
 
-SUFFIXES = .c .cpp .s .o .h .asm
+SUFFIXES = .s .asm .inc .c .cpp .h .o
 
+AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall -O3
 if DEBUG
-	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall -g -O3
-else
-	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall
+	AM_CFLAGS += -g
 endif
+
+################################################################################
+# Special rule to suuport FASM usage.
+################################################################################
+.asm.o:
+	fasm $< $@
 
 ################################################################################
 # The libraries to build.
@@ -20,6 +25,7 @@ noinst_LIBRARIES = libdmf.a
 ################################################################################
 libdmf_a_SOURCES = \
 	$(libdmf_a_HEADERS) \
-	asmmath.s \
-	initialize.c \
-	math.c
+	asmutils.s \
+	fasmutils.asm \
+	math.c \
+	initialize.c

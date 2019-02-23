@@ -569,29 +569,19 @@ configure: failed program was:
 configure:5300: result: void
 configure:5312: checking for ANSI C header files
 configure:5416: result: yes
-configure:5426: checking stdio.h usability
-configure:5426: gcc -c   conftest.c >&5
-configure:5426: $? = 0
-configure:5426: result: yes
-configure:5426: checking stdio.h presence
-configure:5426: gcc -E  conftest.c
-configure:5426: $? = 0
-configure:5426: result: yes
-configure:5426: checking for stdio.h
-configure:5426: result: yes
-configure:5436: checking whether time.h and sys/time.h may both be included
-configure:5456: gcc -c   conftest.c >&5
-configure:5456: $? = 0
-configure:5463: result: yes
-configure:5472: checking for uintptr_t
-configure:5472: gcc -c   conftest.c >&5
-configure:5472: $? = 0
-configure:5472: gcc -c   conftest.c >&5
+configure:5424: checking whether time.h and sys/time.h may both be included
+configure:5444: gcc -c   conftest.c >&5
+configure:5444: $? = 0
+configure:5451: result: yes
+configure:5460: checking for uintptr_t
+configure:5460: gcc -c   conftest.c >&5
+configure:5460: $? = 0
+configure:5460: gcc -c   conftest.c >&5
 conftest.c: In function 'main':
-conftest.c:61:24: error: expected expression before ')' token
+conftest.c:60:24: error: expected expression before ')' token
  if (sizeof ((uintptr_t)))
                         ^
-configure:5472: $? = 1
+configure:5460: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "dmf"
@@ -614,7 +604,6 @@ configure: failed program was:
 | #define HAVE_UNISTD_H 1
 | #define RETSIGTYPE void
 | #define STDC_HEADERS 1
-| #define HAVE_STDIO_H 1
 | #define TIME_WITH_SYS_TIME 1
 | /* end confdefs.h.  */
 | #include <stdio.h>
@@ -658,7 +647,17 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:5472: result: yes
+configure:5460: result: yes
+configure:5498: checking stdio.h usability
+configure:5498: gcc -c   conftest.c >&5
+configure:5498: $? = 0
+configure:5498: result: yes
+configure:5498: checking stdio.h presence
+configure:5498: gcc -E  conftest.c
+configure:5498: $? = 0
+configure:5498: result: yes
+configure:5498: checking for stdio.h
+configure:5498: result: yes
 configure:5511: checking direct.h usability
 configure:5511: gcc -c   conftest.c >&5
 configure:5511: $? = 0
@@ -708,9 +707,9 @@ configure: failed program was:
 | #define HAVE_UNISTD_H 1
 | #define RETSIGTYPE void
 | #define STDC_HEADERS 1
-| #define HAVE_STDIO_H 1
 | #define TIME_WITH_SYS_TIME 1
 | #define HAVE_UINTPTR_T 1
+| #define HAVE_STDIO_H 1
 | #define HAVE_DIRECT_H 1
 | #define HAVE_ERRNO_H 1
 | /* end confdefs.h.  */
@@ -778,9 +777,9 @@ configure: failed program was:
 | #define HAVE_UNISTD_H 1
 | #define RETSIGTYPE void
 | #define STDC_HEADERS 1
-| #define HAVE_STDIO_H 1
 | #define TIME_WITH_SYS_TIME 1
 | #define HAVE_UINTPTR_T 1
+| #define HAVE_STDIO_H 1
 | #define HAVE_DIRECT_H 1
 | #define HAVE_ERRNO_H 1
 | /* end confdefs.h.  */
@@ -849,9 +848,9 @@ configure: failed program was:
 | #define HAVE_UNISTD_H 1
 | #define RETSIGTYPE void
 | #define STDC_HEADERS 1
-| #define HAVE_STDIO_H 1
 | #define TIME_WITH_SYS_TIME 1
 | #define HAVE_UINTPTR_T 1
+| #define HAVE_STDIO_H 1
 | #define HAVE_DIRECT_H 1
 | #define HAVE_ERRNO_H 1
 | #define HAVE_SIGNAL_H 1
@@ -923,9 +922,9 @@ configure: failed program was:
 | #define HAVE_UNISTD_H 1
 | #define RETSIGTYPE void
 | #define STDC_HEADERS 1
-| #define HAVE_STDIO_H 1
 | #define TIME_WITH_SYS_TIME 1
 | #define HAVE_UINTPTR_T 1
+| #define HAVE_STDIO_H 1
 | #define HAVE_DIRECT_H 1
 | #define HAVE_ERRNO_H 1
 | #define HAVE_SIGNAL_H 1
@@ -1181,9 +1180,9 @@ target_alias=''
 #define HAVE_UNISTD_H 1
 #define RETSIGTYPE void
 #define STDC_HEADERS 1
-#define HAVE_STDIO_H 1
 #define TIME_WITH_SYS_TIME 1
 #define HAVE_UINTPTR_T 1
+#define HAVE_STDIO_H 1
 #define HAVE_DIRECT_H 1
 #define HAVE_ERRNO_H 1
 #define HAVE_SIGNAL_H 1

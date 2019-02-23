@@ -257,13 +257,17 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUFFIXES = .c .cpp .s .o .h .asm
+SUFFIXES = .s .asm .inc .c .cpp .h .o
+AM_CFLAGS = -I$(top_srcdir)/src/libdmf -Wall -O3
 dmfutil_SOURCES = dmfutil.c
-dmfutil_LDADD = $(top_builddir)/src/libdmf/libdmf.a $(AM_LDFLAGS)
+dmfutil_LDADD = \
+	$(top_builddir)/src/libdmf/libdmf.a \
+	$(AM_LDFLAGS)
+
 all: all-am
 
 .SUFFIXES:
-.SUFFIXES: .c .cpp .s .o .h .asm .obj
+.SUFFIXES: .s .asm .inc .c .cpp .h .o .obj
 $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
@@ -577,9 +581,8 @@ uninstall-am: uninstall-binPROGRAMS
 
 .PRECIOUS: Makefile
 
+@DEBUG_TRUE@	AM_CFLAGS += -g
 
-@DEBUG_TRUE@	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall -g -O3
-@DEBUG_FALSE@	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall
 # dmfutil_LDADD += $(GLIB_LIBS)
 # dmfutil_LDADD += $(SQLITE3_LIBS)
 

@@ -109,8 +109,8 @@ am__v_AR_0 = @echo "  AR      " $@;
 am__v_AR_1 = 
 libdmf_a_AR = $(AR) $(ARFLAGS)
 libdmf_a_LIBADD =
-am_libdmf_a_OBJECTS = asmmath.$(OBJEXT) initialize.$(OBJEXT) \
-	math.$(OBJEXT)
+am_libdmf_a_OBJECTS = asmutils.$(OBJEXT) fasmutils.$(OBJEXT) \
+	math.$(OBJEXT) initialize.$(OBJEXT)
 libdmf_a_OBJECTS = $(am_libdmf_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -268,7 +268,8 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUFFIXES = .c .cpp .s .o .h .asm
+SUFFIXES = .s .asm .inc .c .cpp .h .o
+AM_CFLAGS = -I$(top_srcdir)/src/libdmf -Wall -O3
 
 ################################################################################
 # The libraries to build.
@@ -280,14 +281,15 @@ noinst_LIBRARIES = libdmf.a
 ################################################################################
 libdmf_a_SOURCES = \
 	$(libdmf_a_HEADERS) \
-	asmmath.s \
-	initialize.c \
-	math.c
+	asmutils.s \
+	fasmutils.asm \
+	math.c \
+	initialize.c
 
 all: all-am
 
 .SUFFIXES:
-.SUFFIXES: .c .cpp .s .o .h .asm .obj
+.SUFFIXES: .s .asm .inc .c .cpp .h .o .obj
 $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
@@ -568,9 +570,13 @@ uninstall-am:
 
 .PRECIOUS: Makefile
 
+@DEBUG_TRUE@	AM_CFLAGS += -g
 
-@DEBUG_TRUE@	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall -g -O3
-@DEBUG_FALSE@	AM_CFLAGS =-I$(top_srcdir)/src/libdmf -Wall
+################################################################################
+# Special rule to suuport FASM usage.
+################################################################################
+.asm.o:
+	fasm $< $@
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
